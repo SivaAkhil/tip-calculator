@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import Calculator from "./Components/Calculator";
+import LogoImage from "./asserts/tip-calculator-app-main/images/logo.svg";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="bg-neutral-lightGrayishCyan min-h-screen  font-spaceMono flex flex-col items-center justify-evenly sm:space-x-2 ">
+        <img src={LogoImage} alt="" className="w-20 my-5" />
+        <Calculator />
+      </div>
+    </Provider>
   );
 }
 
